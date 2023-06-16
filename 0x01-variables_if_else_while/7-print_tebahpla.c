@@ -1,8 +1,8 @@
-#include<stdio.h>
+#include <stdio.h>
 /**
- * main- capital block
- * description: alphabet invert 
- * return: return a zero 
+ * main - main block
+ * Description: alphabet invert order 
+ * Return: 0
  */
 int main(void)
 {
@@ -14,6 +14,6 @@ int main(void)
 		c--;
 	}
 
-putchar('\n');
-return (0);
+	putchar('\n');
+	return (0);
 }
