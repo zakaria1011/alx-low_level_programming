@@ -2,7 +2,7 @@
 /**
  * main- capital block
  * description: alphabet invert 
- * return 0
+ * return: return a zero 
  */
 int main(void)
 {
