@@ -1,7 +1,8 @@
 #include <stdio.h>
 /**
  * main - main block
- * Description: alphabet invert order 
+ * Description: alphabet invert order
+ * alpha bet invert 
  * Return: 0
  */
 int main(void)
