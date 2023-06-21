@@ -14,7 +14,7 @@ for(i=0; i<10 ; i++)
 
     while (c <= 'z')
     {
-        putchar(c);
+       _putchar(c);
         c++;
     }
 
