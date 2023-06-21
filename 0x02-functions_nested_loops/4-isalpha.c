@@ -5,8 +5,7 @@
  * @c: the caractere
  * Return: value 1 if alphabet 0 if no
  */
-
 int _isalpha(char c)
 {
-	 return ((c <= 'z' && c >= 'a') || (c <= 'Z' && c >= 'A'));
-}
+	return((c <= 'z' && c >= 'a') || (c <= 'Z' && c >= 'A'));
+}	
