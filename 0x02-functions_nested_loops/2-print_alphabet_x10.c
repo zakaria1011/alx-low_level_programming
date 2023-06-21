@@ -18,6 +18,6 @@ for(i=0; i<10 ; i++)
         c++;
     }
 
-   _ putchar('\n');
+   _putchar('\n');
 }
 }
