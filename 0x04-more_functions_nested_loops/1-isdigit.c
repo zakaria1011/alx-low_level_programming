@@ -3,8 +3,8 @@
 
 /**
  * _isdigit - check digit
- * @c: the number
- * Return 1 if true 0 if fals
+ *@c: the number
+ * Return: 1 if true 0 if fals
  */
 
 int _isdigit(int c)
