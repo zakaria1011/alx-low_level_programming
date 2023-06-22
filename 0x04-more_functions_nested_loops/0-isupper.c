@@ -1,19 +1,20 @@
-#include<stdio.h>
+#include "main.h"
+#include <stdio.h>
 
 /**
- * _isupper - check if the caracter is upper
- * @c: the caractere
- * Return : 0 if not 1 if upper 
+ * _isupper - check the code for Holberton School students.
+ *@c : variable
+ * Return: 0 or 1 .
  */
-
-int _isupper(char c)
+int _isupper(int c)
 {
-    if (c <= 'Z'  &&  c >= 'A')
-    {
-        return 1;
-    }
-    else 
+if (c >= 'A' && c <= 'Z')
 {
-    return 0; 
+return (1);
 }
+else
+{
+return (0);
+}
+return (0);
 }
