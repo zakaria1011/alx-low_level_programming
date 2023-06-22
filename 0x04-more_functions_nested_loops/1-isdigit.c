@@ -2,13 +2,13 @@
 #include <stdio.h>
 
 /**
- * _isdigit - check digit.
- *@c: the number
- * Return: 1 if true 0 if fals.
+ * _isdigit - check the code for Holberton School students.
+ *@c : variable
+ * Return: 0 or 1 .
  */
 int _isdigit(int c)
 {
-if (c <= '9' && c >= '1')
+if (c >= '0' && c <= '9')
 {
 return (1);
 }
