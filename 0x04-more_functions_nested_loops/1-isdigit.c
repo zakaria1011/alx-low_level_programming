@@ -9,7 +9,7 @@
 
 int _isdigit(int c)
 {
-	if (c <= 9 && c >= 1)
+	if (c <= '9' && c >= '1')
 	{
 		return (1);
 	}
