@@ -1,21 +1,41 @@
-#include "main.h"
+#include "holberton.h"
 
 /**
- * more_numbers - print from 0 to 14  ten times
- * Return: nothing
+ * more_numbers - check the code for Holberton School students.
+ * Return: void .
  */
-
-void more_numbers(void);
+void more_numbers(void)
 {
-	int i, j;
+int count, i, changer, id;
+count = 0;
+id = 0;
+while (count < 10)
+{
+i = 0;
+for (i = 0; i <= 14; i++)
+{
+changer = i;
+if (i < 10)
+{
+changer = i;
+}
+else
+{
+changer = 1;
+}
+_putchar(changer + '0');
+if (i > 9)
+{
+_putchar(id + '0');
+id++;
+}
+}
 
-	for (j = 0 ; j < 10 ; j++)
-	{
-		for (i = 0 ; i < 15 ; i++)
-		{
-			_putchar(i + 'O');
-		}
-		_putchar('\n');
-	}
-	_putchar('\n');
+_putchar('\n');
+if (i == 15)
+{
+id = 0;
+}
+count++;
+}
 }
