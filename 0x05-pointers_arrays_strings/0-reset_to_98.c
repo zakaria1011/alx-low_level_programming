@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * reset_to _98 - reset velu to 98
+ *reset_to_98 - reset velu to 98
  *@p: argument
  *Return: nothing
  */
