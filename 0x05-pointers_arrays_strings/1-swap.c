@@ -1,4 +1,4 @@
-#include<stdio.h>
+#include "main.h"
 /**
  * swap_int - swaping tw numbers
  *@a: first argment
