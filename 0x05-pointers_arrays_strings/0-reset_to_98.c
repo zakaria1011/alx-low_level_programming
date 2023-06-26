@@ -1,0 +1,11 @@
+#include "main.h"
+
+/**
+ * reset_to _98 - reset velu to 98
+ *@p: argument
+ *Return: nothing
+ */
+reset_to_98(int *p)
+{
+	*p = 98;
+}
