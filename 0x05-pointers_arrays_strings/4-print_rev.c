@@ -14,7 +14,7 @@ void print_rev(char *str)
 	{
 		len++;
 	}
-	while (len != -1)
+	while (len != 0)
 	{
 		printf("%c", str[len]);
 		len--;
