@@ -14,18 +14,18 @@ void rev_string(char *s)
 		len++;
 	}
 
-	int star;
+	int start;
 	int end;
 	char temp;
 
-	star = 0;
+	start = 0;
 	end = len - 1;
-	while (star < end)
+	while (start < end)
 	{
 		temp = s[end];
-		s[end] = s[star];
-		s[star] = temp;
-		star++;
+		s[end] = s[start];
+		s[start] = temp;
+		start++;
 		end--;
 	}
 }
