@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * str_len - conting lenght of a string
+ * _strlen - conting lenght of a string
  *@s: the argument
  * Return: the lenght
  */
-int str_len(char *s)
+int _strlen(char *s)
 {
 	int len;
 
