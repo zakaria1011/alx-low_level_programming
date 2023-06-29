@@ -7,7 +7,6 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	
 	int len1;
 	int len2;
 
