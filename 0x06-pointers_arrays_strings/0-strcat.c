@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _strcat - add two word
  *@dest: first arg
