@@ -23,5 +23,6 @@ while (j < n)
     j++;
     i++;
     }
+    dest[i]='\0';
 return (dest);
 }
