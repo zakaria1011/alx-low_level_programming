@@ -32,6 +32,6 @@ char *cap_string(char *str)
 		current++;
 	}
 
-	return str;
+	return (str);
 }
 
