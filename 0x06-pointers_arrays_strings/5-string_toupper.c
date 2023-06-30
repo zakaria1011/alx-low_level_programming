@@ -4,11 +4,13 @@
  * @src: thestring
  * return: nothing
  */
+
 char *string_toupper(char *src)
 {
 	int i;
 
 	i = 0;
+
 	while (src[i] != '\0')
 	{
 		if (src[i] <= 'z' && src[i] >= 'a')
@@ -17,5 +19,6 @@ char *string_toupper(char *src)
 	}
 		i++;
 	}
+
 	return (src);
 }
