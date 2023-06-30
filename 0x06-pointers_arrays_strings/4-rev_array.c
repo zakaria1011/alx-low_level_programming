@@ -19,6 +19,6 @@ void reverse_array(int *a, int n)
 		a[star] = a[end];
 		a[end] = temp;
 		star++;
-		end++;
+		end--;
 	}
 }
