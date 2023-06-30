@@ -1,5 +1,4 @@
 #include "main.h"
-#include<ctype.h>
 /**
  * string_toupper - upercase
  * @src: thestring
@@ -12,7 +11,9 @@ char *string_toupper(char *src)
 	i = 0;
 	while (src[i] != '\0')
 	{
-		src[i] = toupper(src[i]);
+		if (s[i] <= 'z' && s[i] >= 'a')
+		{
+			s[i] = s[i] - 32;
 	i++;
 	}
 	return (src);
