@@ -1,10 +1,10 @@
 #include "main.h"
  /**
-  *_strncpy - copie a string
+  * _strncpy - copie a string
   *@dest: first argumen
   *@src: second argumant
   *@n: number to copy
-  *Return: dest
+  * Return: dest
   */
 char *_strncpy(char *dest, char *src, int  n)
 {
