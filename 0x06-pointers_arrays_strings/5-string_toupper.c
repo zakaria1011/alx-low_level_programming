@@ -11,12 +11,12 @@ char *string_toupper(char *src)
 	i = 0;
 	while (src[i] != '\0')
 	{
-		if (s[i] >= 'a' && s[i] <= 'z')
+		if (src[i] >= 'a' && src[i] <= 'z')
 		{
-			s[i] = s[i] - 32;
+			src[i] = src[i] - 32;
 		}
 		i++;
 	}
 
-	return (s);
+	return (src);
 }
