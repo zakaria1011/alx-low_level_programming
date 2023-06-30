@@ -1,8 +1,9 @@
 #include "main.h"
+
 /**
  * string_toupper - upercase
  * @src: thestring
- * return: nothing
+ * return: strinig
  */
 char *string_toupper(char *src)
 {
