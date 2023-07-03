@@ -13,6 +13,7 @@ while (n > 0)
 *dest = *src;
 src++;
 dest++;
+n--;
 }
 return (dest);
 }
