@@ -4,6 +4,7 @@
  * @dest: first var
  * @src: source
  * @n: number of bit
+ * 
  * Return: return dest pointer
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
