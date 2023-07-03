@@ -11,13 +11,14 @@ char *p = s;
 
 while (*p != c)
 {
-if (*p == c)
+p++;
+}
+if (*p != NULL)
 {
 return (p);
 }
 else
 {
 return (NULL);
-}
 }
 }
