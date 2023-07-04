@@ -5,7 +5,7 @@
  * print_chessboard - Prints the chessboard.
  * @a: The chessboard array.
  *
- * Description: This function prints the chessboard
+ * Return: chessboard
  */
 void print_chessboard(char (*a)[8])
 {
