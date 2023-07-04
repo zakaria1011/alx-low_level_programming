@@ -1,5 +1,5 @@
 #include "main.h"
-#include "holberton.h"
+#include<stdio.h>
 /**
  * print_chessboard - print a chessboard.
  * @a: source matrix
@@ -15,8 +15,8 @@ void print_chessboard(char (*a)[8])
 	{
 		for (j = 0; j <= 7; j++)
 		{
-			_putchar(a[i][j]);
+			printf("%c", a[i][j]);
 		}
-		_putchar('\n');
+		printf("\n");
 	}
 }
