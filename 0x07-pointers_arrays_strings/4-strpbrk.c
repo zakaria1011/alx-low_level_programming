@@ -7,28 +7,21 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-char *p = NULL;
-int i;
-while (*s != '\0')
-{
-while (*accept = '\0')
-{
-if (*s == *accept)
-{
-*(p + i) = *s;
-i++;
-break;
-}
-accept++;
-}
-s++;
-}
-if (*p == NULL)
-{
-return (0);
-}
-else
-{
-return (p);
-}
+	unsigned int i, j;
+
+	for (i = 0; *(s + i); i++)
+	{
+		for (j = 0; *(accept + j); j++)
+		{
+			if (*(s + i) == *(accept + j))
+			{
+				break;
+			}
+		}
+		if (*(accept + j) != '\0')
+		{
+			return (s + i);
+		}
+	}
+	return (0);
 }
