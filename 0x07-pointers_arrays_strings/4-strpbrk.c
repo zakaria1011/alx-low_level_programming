@@ -3,11 +3,11 @@
  * _strpbrk - return similar char
  * @s: string
  * @accept: pool to match with
- * Return: number of bit
+ * Return: pointer
  */
 char *_strpbrk(char *s, char *accept)
 {
-char *p;
+char *p = NULL;
 int i;
 while (*s != '\0')
 {
@@ -23,5 +23,12 @@ accept++;
 }
 s++;
 }
+if (*p == NULL)
+{
+return (0);
+}
+else
+{
 return (p);
+}
 }
