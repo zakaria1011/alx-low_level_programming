@@ -13,11 +13,11 @@ int i;
 int sum_main = 0;
 int sum_secondary = 0;
 
-for (i = 0; i < size; i++)
+for (i = 0 ; i < size ; i++)
 {
 sum_main += a[i * (size + 1)];
 }
-for (i = 1; i <= size; i++)
+for (i = 1 ; i <= size ; i++)
 {
 sum_secondary += a[(size - 1) * i];
 }
