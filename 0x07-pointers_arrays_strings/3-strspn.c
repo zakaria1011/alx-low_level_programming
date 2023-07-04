@@ -9,8 +9,8 @@ unsigned int _strspn(char *s, char *accept)
 {
 int len_s = 0;
 int len_ac = 0;
-int i;
-int j;
+unsigned int i;
+unsigned int j;
 
 while (*s != '\0')
 {
