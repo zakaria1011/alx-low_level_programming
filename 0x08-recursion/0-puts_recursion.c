@@ -1,4 +1,5 @@
 #include "main.h"
+#include<stdio.h>
 /**
  * _puts_recursion - print string  but in recursion way
  * @s: string to puts
@@ -11,7 +12,7 @@ printf("\n");
 }
 else
 {
-printf('%c', *s);
-_put_recursion(s + 1);
+printf("%c", *s);
+_puts_recursion(s + 1);
 }
 }
