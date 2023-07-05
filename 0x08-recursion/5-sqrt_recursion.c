@@ -1,26 +1,28 @@
 #include "main.h"
+
 /**
- * _sqrt_recursion - calcul squar root
- * @n: argument
- * Return: sqrt root
+ * _sqrt_recursion - main funct
+ * @n: int n
+ * Return: int
  */
 int _sqrt_recursion(int n)
 {
-unsigned int i = n;
-if (n < 0)
-{
-return (-1);
+	return (_sqrt(n, 1));
 }
-while (i * i != n && i != 0)
+
+/**
+ * _sqrt - _sqrt_recursion
+ * @n: integer paramtr
+ * @i: integer parameter
+ * Return: sqrt
+ */
+int _sqrt(int n, int i)
 {
-i--;
-}
-if (i == 0)
-{
-return (-1);
-}
-else
-{
-return (i);
-}
+	if (n < 0)
+		return (-1);
+	if ((i * i) > n)
+		return (-1);
+	if (i * i == n)
+		return (i);
+	return (_sqrt(n, i + 1));
 }
