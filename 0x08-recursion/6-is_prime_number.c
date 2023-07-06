@@ -37,3 +37,4 @@ if (n == 2)
 return (0);
 return (is_prime_number_helper(n, 2));
 }
+}
