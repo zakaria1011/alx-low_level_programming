@@ -5,8 +5,7 @@
  * @argv: array to pointer
  * Return: always 0
  */
-int main(int argc, char *argv[] __attribure__((unused)))
-{
+int main(int argc, char *argv[]) 
 int count = 0;
 while (argv != NULL)
 {
