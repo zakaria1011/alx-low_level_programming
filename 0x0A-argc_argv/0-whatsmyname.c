@@ -1,13 +1,16 @@
-#include<stdio.h>
-/**
- * main - main function
- * Return: zero
- * @argc: number of lines
- * @argv: array of pointer
- */
-int main(int argc __attribure__((unused)), char *argv[])
-{
+#include <stdio.h>
+#include "main.h"
 
-printf("%s \n", *argv);
-return (0);
+/**
+ * main - prints the name of the program
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: Always 0 (Success)
+ */
+int main(int argc __attribute__((unused)), char *argv[])
+{
+	printf("%s\n", *argv);
+
+	return (0);
 }
