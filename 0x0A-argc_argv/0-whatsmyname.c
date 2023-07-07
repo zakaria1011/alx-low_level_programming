@@ -5,9 +5,9 @@
  * @argc: number of lines
  * @argv: array of pointer
  */
-int main(int argc, char *argv[])
+int main(int argc __attribure__((unused)), char *argv[])
 {
-void(argc);
-printf("%s \n", argv[0]);
+
+printf("%s \n", *argv);
 return (0);
 }
