@@ -9,9 +9,11 @@
 int main(int argc, char *argv[])
 {
 char *p = "Error";
+int x;
 if (argc == 2)
 {
-printf("%d", (*argv[0]) * (argv[1]));
+x == (*argv[0]) * (argv[1])
+printf("%d", x);
 }
 else
 {
