@@ -12,7 +12,7 @@ char *p = "Error";
 int x;
 if (argc == 2)
 {
-x == (*argv[0]) * (argv[1])
+x == (*argv[0]) * (argv[1]);
 printf("%d", x);
 }
 else
