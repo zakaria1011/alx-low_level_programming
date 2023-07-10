@@ -29,8 +29,14 @@ for (i = 0 ; i < hight ; i++)
 matrix[i] = (int *)malloc(width * sizeof(int));
 if (matrix[i] == NULL)
 {
+for (i = 0 ; i < hight ; i++)
+{
+free(matrix[i]);
+}
+free(matrix);
 return (NULL);
 }
+
 }
 for (i = 0 ; i < hight ; i++)
 {
