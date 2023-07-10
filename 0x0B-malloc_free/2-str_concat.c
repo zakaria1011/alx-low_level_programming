@@ -19,15 +19,11 @@ int size2 = 0;
 if (s1 == NULL)
 {
 s1 = "";
-size1 = 1;
 }
 if (s2 == NULL)
 {
 s2 = "";
-size2 = 1;
 }
-size1 = 0;
-size2 = 0;
 while (*p != '\0')
 {
 size1++;
