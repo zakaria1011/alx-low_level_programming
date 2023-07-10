@@ -8,15 +8,15 @@
  */
 char *_strdup(char *str)
 {
-if (str == NULL)
-{
-return (NULL);
-}
 char *p = str;
 int i;
 char *array;
 int size = 0;
 
+if (str == NULL)
+{
+return (NULL);
+}
 while (*p != '\0')
 {
 size++;
