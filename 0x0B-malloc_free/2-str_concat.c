@@ -5,11 +5,11 @@
  * str_concat - concat two strings
  * @s1: first string
  * @s2: second string
+ * Return: pointer
  */
 char *str_concat(char *s1, char *s2)
 {
 char *p = s1, *q = s2;
-char c = '\0';
 int j;
 int i;
 char *array;
@@ -18,11 +18,11 @@ int size2 = 0;
 
 if (s1 == NULL)
 {
-*s1 = c;
+s1 = "";
 }
 if (s2 == NULL)
 {
-*s2 = c;
+*s2 = "";
 }
 while (*p != '\0')
 {
