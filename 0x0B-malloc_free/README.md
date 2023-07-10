@@ -1,0 +1,1 @@
+allocation dynamlic of memory
