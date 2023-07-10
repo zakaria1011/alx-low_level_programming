@@ -8,6 +8,10 @@
  */
 char *_strdup(char *str)
 {
+if (str == NULL)
+{
+return (NULL);
+}
 char *p = str;
 int i;
 char *array;
@@ -18,7 +22,7 @@ while (*p != '\0')
 size++;
 p++;
 }
-array = (char *)malloc(size *sizeof(char));
+array = (char *)malloc((size + 1) * sizeof(char));
 if (array == NULL)
 {
 return (NULL);
