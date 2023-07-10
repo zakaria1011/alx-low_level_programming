@@ -13,7 +13,7 @@ int i;
 
 for (i = 0 ; i < height ; i++)
 {
-free(matrix[i]);
+free(grid[i]);
 }
-free(matrix);
+free(grid);
 }
