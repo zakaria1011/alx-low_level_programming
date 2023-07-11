@@ -10,8 +10,9 @@
  */
 char *argstostr(int ac, char **av)
 {
+int i; 
 int len = 0;
-char *result = NULL
+char *result = NULL;
 
 for (i = 0 ; i < ac ; i++)
 {
@@ -19,7 +20,6 @@ for (i = 0 ; i < ac ; i++)
 }
 
 result=(char*)malloc((len+1) * sizeof(char));
-char *result = NULL;
 
 if (ac == 0 || av == NULL)
 {
@@ -30,4 +30,6 @@ for (i = 0 ; i < ac ; i++)
 {
 strcat(result, av[i]);
 }
-result[ac]='\n';
+result[len + 1] = '\n';
+return (result);
+}
