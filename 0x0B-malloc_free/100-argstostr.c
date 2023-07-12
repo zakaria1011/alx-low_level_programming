@@ -27,7 +27,6 @@ char *argstostr(int ac, char **av) {
         result[lenindx++] = '\n';
     }
 
-    result[lenindx] = '\0'; // Add null-terminating character
-
+    result[lenindx] = '\0'; 
     return result;
 }
