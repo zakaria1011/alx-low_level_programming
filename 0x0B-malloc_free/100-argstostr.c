@@ -1,4 +1,4 @@
-//#include "main.h"
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,7 +11,6 @@ char *argstostr(int ac, char **av) {
         return NULL;
     }
 
-    // Calculate the total length of the concatenated string
     for (i = 0; i < ac; i++) {
         len += strlen(av[i]);
     }
@@ -21,7 +20,7 @@ char *argstostr(int ac, char **av) {
         return NULL;
     }
 
-    // Copy each argument and add a newline character
+    
     for (i = 0; i < ac; i++) {
         strcat(result, av[i]);
         lenindx += strlen(av[i]);
