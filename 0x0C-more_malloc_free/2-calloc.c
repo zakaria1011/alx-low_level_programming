@@ -1,6 +1,7 @@
 #include "main.h"
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 /**
  * _calloc -  allocation set to zero
  * @nmemb: number of celul
@@ -9,20 +10,16 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-unsigned int i;
+unsigned int i, c = 0;
 void *result;
 if (nmemb == 0 || size == 0)
 {
 return (NULL);
 }
-result = (void *)malloc(nmemb * size);
+result = (void *)calloc(nmemb, size);
 if (result == NULL)
 {
 return (NULL);
-}
-for (i = 0 ; i < nmemb ; i++)
-{
-result[i] = O;
 }
 return (result);
 }
