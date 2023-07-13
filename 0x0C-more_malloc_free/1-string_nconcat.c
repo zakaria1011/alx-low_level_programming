@@ -40,5 +40,7 @@ for (i = len1, j = 0 ; i < len1 + n && j < n ; i++, j++)
 {
 result[i] = s2[j];
 }
+i++;
+result[i] = '\0';
 return (result);
 }
