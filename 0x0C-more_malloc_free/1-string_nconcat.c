@@ -27,16 +27,16 @@ if (n > len2)
 {
 n = len2;
 }
-result = (char *) malloc((len1 + n + 1) *sizeof(char));
+result = (char *) malloc((len1 + n + 1) * sizeof(char));
 if (result == NULL)
 {
 return (NULL);
 }
-for ( i = 0 ; i < len1 ; i++)
+for (i = 0 ; i < len1 ; i++)
 {
 result[i] = s1[i];
 }
-for ( i = len1, j = 0 ; i < len1 + n && j < n  ; i++, j++)
+for (i = len1, j = 0 ; i < len1 + n && j < n  ; i++, j++)
 {
 result[i] = s2[j];
 }
