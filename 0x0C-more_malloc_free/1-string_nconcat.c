@@ -42,5 +42,6 @@ for (i = len1, j = 0 ; (i < (len1 + n)) &&(j < n) ; i++, j++)
 {
 result[i] = s2[j];
 }
+result[i+1] = '\0';
 return (result);
 }
