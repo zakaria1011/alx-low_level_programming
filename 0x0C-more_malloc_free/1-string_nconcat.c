@@ -32,9 +32,18 @@ if (result == NULL)
 {
 return (NULL);
 }
-strcpy(concat, s1);
-strncat(concat, s2, n);
+while(i < len1)
+{
+result[i] = s1[i];
+i++;
+}
+while(i < len1 +n)
+{
+result[i] = s1[j];
+i++;
+j++;
+}
 
-result[i] = '\0';
+result[i++] = '\0';
 return (result);
 }
