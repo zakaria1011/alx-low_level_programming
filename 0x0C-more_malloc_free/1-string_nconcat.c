@@ -27,7 +27,7 @@ if (n > len2)
 {
 n = len2;
 }
-result = (char *) malloc((len1 + n) *sizeof(char));
+result = (char *) malloc((len1 + n + 1) *sizeof(char));
 if (result == NULL)
 {
 return (NULL);
