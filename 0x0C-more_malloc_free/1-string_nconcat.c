@@ -32,17 +32,13 @@ if (result == NULL)
 {
 return (NULL);
 }
-strcpy(result, s1);
-strncat(result, s2, n);
-result[len1 + n] = '\0';
-return (result);
-}
-int main(void)
+for (i = 0 ; i < len1 ; i++)
 {
-    char *concat;
-
-    concat = string_nconcat("Best ", "School !!!", 6);
-    printf("%s\n", concat);
-    free(concat);
-    return (0);
+result[i] = s1[i];
+}
+for (i = len1, j = 0 ; i < len1 + n && j < n ; i++, j++)
+{
+result[i] = s2[j];
+}
+return (result);
 }
