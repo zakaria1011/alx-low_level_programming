@@ -37,3 +37,12 @@ strncat(result, s2, n);
 result[len1 + n] = '\0';
 return (result);
 }
+int main(void)
+{
+    char *concat;
+
+    concat = string_nconcat("Best ", "School !!!", 6);
+    printf("%s\n", concat);
+    free(concat);
+    return (0);
+}
