@@ -1,7 +1,6 @@
 #include "main.h"
 #include<stdlib.h>
 #include<stdio.h>
-#include<string.h>
 /**
  * string_nconcat - concat 2 string
  * @s1: first arg
@@ -12,7 +11,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 unsigned int i, j, len1, len2;
-char *result;
+char *result, *p = s1, *q = s2;
 if (s1 == NULL)
 {
 s1 = "";
@@ -21,8 +20,17 @@ if (s2 == NULL)
 {
 s2 = "";
 }
-len1 = strlen(s1);
-len2 = strlen(s2);
+while(p != '\0')
+{
+    len1++;
+    p++;
+}
+while(q != '\0')
+{
+    len2++;
+    q++;
+}
+
 if (n > len2)
 {
 n = len2;
