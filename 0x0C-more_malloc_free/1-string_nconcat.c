@@ -8,15 +8,19 @@
  * @s1: first arg
  * @s2: second arg
  * @n: lenght
+ * Return: pointer
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 unsigned int i, j, len1, len2;
 char *result;
 char empty = '\0';
-if (s1 == NULL || s2 == NULL)
+if (s1 == NULL)
 {
 s1 = &empty;
+}
+if (s2 == NULL)
+{
 s2 = &empty;
 }
 len1 = strlen(s1);
