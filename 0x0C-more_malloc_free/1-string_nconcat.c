@@ -32,15 +32,9 @@ if (result == NULL)
 {
 return (NULL);
 }
-for (i = 0 ; i < len1 ; i++)
-{
-result[i] = s1[i];
-}
-for (i = len1, j = 0 ; i < len1 + n && j < n ; i++, j++)
-{
-result[i] = s2[j];
-}
-i++;
+strcpy(concat, s1);
+strncat(concat, s2, n);
+
 result[i] = '\0';
 return (result);
 }
