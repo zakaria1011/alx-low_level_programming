@@ -15,7 +15,7 @@ if (nmemb == 0 || size == 0)
 {
 return (NULL);
 }
-result = (void *)malloc(nmemb * sizeof(size));
+result = (void *)malloc(nmemb * size);
 if (result == NULL)
 {
 return (NULL);
