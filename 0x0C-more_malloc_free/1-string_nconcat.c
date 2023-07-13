@@ -1,6 +1,7 @@
 #include "main.h"
 #include<stdlib.h>
 #include<stdio.h>
+#include<string.h>
 /**
  * string_nconcat - concat 2 string
  * @s1: first arg
@@ -20,17 +21,8 @@ if (s2 == NULL)
 {
 s2 = "";
 }
-while(p != '\0')
-{
-    len1++;
-    p++;
-}
-while(q != '\0')
-{
-    len2++;
-    q++;
-}
-
+len1 = strlen(s1);
+len2 = strlen(s2);
 if (n > len2)
 {
 n = len2;
