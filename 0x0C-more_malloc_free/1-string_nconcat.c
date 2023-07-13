@@ -32,18 +32,14 @@ if (result == NULL)
 {
 return (NULL);
 }
-while(i < len1)
+for ( i = 0 ; i < len1 ; i++)
 {
 result[i] = s1[i];
-i++;
 }
-while(i < len1 +n)
+for ( i = len1, j = 0 ; i < len1 + n && j < n  ; i++, j++)
 {
-result[i] = s1[j];
-i++;
-j++;
+result[i] = s2[j];
 }
-
 result[i++] = '\0';
 return (result);
 }
