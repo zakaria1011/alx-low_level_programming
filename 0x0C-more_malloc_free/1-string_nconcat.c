@@ -34,14 +34,8 @@ if (result == NULL)
 {
 return (NULL);
 }
-for (i = 0 ; i < len1 ; i++)
-{
-result[i] = s1[i];
-}
-for (i = len1, j = 0 ; (i < (len1 + n)) &&(j < n) ; i++, j++)
-{
-result[i] = s2[j];
-}
-result[i+1] = '\0';
+strcpy(result, s1);
+strncat(result, s2, n);
+result[len1 + n] = '\0';
 return (result);
 }
