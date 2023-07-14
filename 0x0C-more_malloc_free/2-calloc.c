@@ -16,7 +16,7 @@ if (nmemb == 0 || size == 0)
 {
 return (NULL);
 }
-result = (void *)malloc(totalsize);
+result = malloc(totalsize);
 if (result == NULL)
 {
 return (NULL);
