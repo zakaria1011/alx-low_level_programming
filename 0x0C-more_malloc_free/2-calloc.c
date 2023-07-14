@@ -10,13 +10,13 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-unsigned int i, c = 0;
+    unsigned int totalsize = nmemb * size;
 void *result;
 if (nmemb == 0 || size == 0)
 {
 return (NULL);
 }
-result = (void *)malloc(nmemb * size);
+result = (void *)malloc(totalsize);
 if (result == NULL)
 {
 return (NULL);
