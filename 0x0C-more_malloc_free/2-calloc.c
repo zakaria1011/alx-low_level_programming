@@ -21,6 +21,6 @@ if (result == NULL)
 {
 return (NULL);
 }
-memset(result, 0, size);
+memset(result, 0, totalsize);
 return (result);
 }
