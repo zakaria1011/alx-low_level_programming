@@ -16,13 +16,13 @@ if (newDog == NULL)
 {
 return (NULL);
 }
-newDog->name = malloc(strlen(name));
+newDog->name = malloc(strlen(name) + 1);
 if (newDog->name == NULL)
 {
 return (NULL);
 }
 strcpy(newDog->name, name);
-newDog->owner = malloc(strlen(owner));
+newDog->owner = malloc(strlen(owner) + 1);
 if (newDog->owner == NULL)
 {
 return (NULL);
