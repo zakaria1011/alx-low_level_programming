@@ -21,11 +21,13 @@ dogg->name = malloc(strlen(name) + 1);
 if (dogg->name == NULL)
 {
 free(dogg);
+free(dogg->name);
 }
 dogg->owner = malloc(strlen(owner) + 1);
 if (dogg->owner == NULL)
 {
 free(dogg);
+free(dogg->owner);
 }
 strcpy(dogg->name, name);
 strcpy(dogg->owner, owner);
