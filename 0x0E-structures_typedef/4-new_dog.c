@@ -20,16 +20,16 @@ return (NULL);
 dogg->name = malloc(strlen(name) + 1);
 if (dogg->name == NULL)
 {
-free(dogg);
 free(dogg->name);
+free(dogg);
 return (NULL);
 }
 strcpy(dogg->name, name);
 dogg->owner = malloc(strlen(owner) + 1);
 if (dogg->owner == NULL)
 {
-free(dogg);
 free(dogg->owner);
+free(dogg);
 return (NULL);
 }
 strcpy(dogg->owner, owner);
