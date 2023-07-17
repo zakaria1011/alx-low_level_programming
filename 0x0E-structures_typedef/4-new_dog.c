@@ -17,14 +17,14 @@ if (newDog == NULL)
 free(newDog);
 return (NULL);
 }
-newDog->name = (char *) malloc(strlen(name) + 1);
+newDog->name = (char *) malloc(sizeof(char) * (strlen(name) + 1));
 if (newDog->name == NULL)
 {
 free(newDog->name);
 return (NULL);
 }
 strcpy(newDog->name, name);
-newDog->owner = (char *) malloc(strlen(owner) + 1);
+newDog->owner = (char *) malloc(sizeof(char) * (strlen(owner) + 1));
 if (newDog->owner == NULL)
 {
 free(newDog->owner);
