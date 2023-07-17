@@ -20,12 +20,14 @@ return (NULL);
 newDog->name = (char *) malloc(strlen(name) + 1);
 if (newDog->name == NULL)
 {
+free(newDog->name);
 return (NULL);
 }
 strcpy(newDog->name, name);
 newDog->owner = (char *) malloc(strlen(owner) + 1);
 if (newDog->owner == NULL)
 {
+free(newDog->owner);
 return (NULL);
 }
 strcpy(newDog->owner, owner);
