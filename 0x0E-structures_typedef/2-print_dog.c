@@ -1,4 +1,5 @@
 #include "dog.h"
+#include<stdlib.h>
 #include<stdio.h>
 /**
  * print_dog - print name, owner, age of a dog
