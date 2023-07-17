@@ -1,6 +1,7 @@
 #include "dog.h"
 #include<stdio.h>
 #include<stdlib.h>
+#include "string.h"
 /**
  * new_dog - define new dog
  * @name: name dogg
@@ -16,8 +17,18 @@ if (dogg == NULL)
 {
 return (NULL);
 }
-dogg->name = name;
+dogg->name = malloc(strlen(name) + 1);
+if (dogg->name == NULL)
+{
+free(dogg);
+}
+dogg->owner = malloc(strlen(owner) + 1);
+if (dogg->owner == NULL)
+{
+free(dogg);
+}
+strcpy(dogg->name, name);
+strcpy(dogg->owner, owner);
 dogg->age = age;
-dogg->owner = owner;
 return (dogg);
 }
