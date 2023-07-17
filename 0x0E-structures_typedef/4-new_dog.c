@@ -14,6 +14,7 @@ dog_t *newDog;
 newDog = (dog_t *) malloc(sizeof(dog_t));
 if (newDog == NULL)
 {
+free(newDog);
 return (NULL);
 }
 newDog->name = (char *) malloc(strlen(name) + 1);
