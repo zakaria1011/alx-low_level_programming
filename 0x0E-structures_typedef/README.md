@@ -1,0 +1,1 @@
+about struture in c
