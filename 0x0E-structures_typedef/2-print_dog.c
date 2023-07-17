@@ -13,6 +13,6 @@ d->name = "nil";
 if (d->owner == NULL)
 d->owner = "nail";
 printf("Name: %s\n", d->name);
-printf("age: %f\n", d->age);
+printf("age: %.1f\n", d->age);
 printf("Owner: %s\n", d->owner);
 }
