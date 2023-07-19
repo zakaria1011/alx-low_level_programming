@@ -8,9 +8,9 @@
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
+unsigned int i = 0;
 if (size <= 0)
 return (-1);
-unsigned int i = 0;
 while (!cmp(array[i]))
 {
 i++;
