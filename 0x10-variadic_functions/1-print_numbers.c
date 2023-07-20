@@ -16,7 +16,7 @@ if (separator != NULL)
 for (i = 0 ; i < n ; i++)
 {
 num = va_arg(args, int);
-printf("%d %s", num, separator);
+printf("%d%s", num, separator);
 }
 }
 else
