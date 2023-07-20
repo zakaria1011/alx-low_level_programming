@@ -28,4 +28,5 @@ printf("%d", num);
 }
 printf("\n");
 }
+va_end(args);
 }
