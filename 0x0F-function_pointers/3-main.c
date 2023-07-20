@@ -20,12 +20,12 @@ exit(98);
 }
 if (func == NULL)
 {
-printf("Error \n");
+printf("Error\n");
 exit(99);
 }
 if ((argv[2][0] == '/' || argv[2][0] == '%') && num2 == 0)
 {
-printf("Error \n");
+printf("Error\n");
 exit(100);
 }
 result = func (num1, num2);
