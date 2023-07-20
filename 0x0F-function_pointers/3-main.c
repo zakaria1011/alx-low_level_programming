@@ -29,6 +29,6 @@ printf("Error \n");
 exit(100);
 }
 result = func (num1, num2);
-printf("%d \n", result);
+printf("%d\n", result);
 return (0);
 }
