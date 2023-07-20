@@ -17,19 +17,16 @@ func = get_op_func(argv[2]);
 if (argc != 4)
 {
 exit(98);
-return (0);
 }
 if (func == NULL)
 {
 printf("Error \n");
 exit(99);
-return (0);
 }
 if ((argv[2][0] == '/' || argv[2][0] == '%') && num2 == 0)
 {
 printf("Error \n");
 exit(100);
-return (0);
 }
 result = func (num1, num2);
 printf("%d \n", result);
