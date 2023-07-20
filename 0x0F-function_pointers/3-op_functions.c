@@ -1,33 +1,33 @@
 #include "3-calc.h"
 /**
  * op_add - addition
- * @a: first int
- * @b: seconde int
- * Return: result
- */
- /**
- * op_sub - addition
- * @a: first int
- * @b: seconde int
- * Return: result
+ * @a: first num
+ * @a:seconde num
+ * Return : result
  */
 /**
- * op_mul - addition
- * @a: first int
- * @b: seconde int
- * Return: result
+ * op_sub - subtraction
+ * @a: first num
+ * @a:seconde num
+ * Return : result
  */
 /**
- * op_div - addition
- * @a: first int
- * @b: seconde int
- * Return: result
+ * op_mul - multiplication
+ * @a: first num
+ * @a:seconde num
+ * Return : result
  */
 /**
- * op_mod - addition
- * @a: first int
- * @b: seconde int
- * Return: result
+ * op_div - divition
+ * @a: first num
+ * @a:seconde num
+ * Return : result
+ */
+/**
+ * op_mod - modulo
+ * @a: first num
+ * @a:seconde num
+ * Return : result
  */
 int op_add(int a, int b)
 {
