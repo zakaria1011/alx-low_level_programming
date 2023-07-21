@@ -33,7 +33,7 @@ if (s == NULL)
 {
 printf("(nil)");
 }
-else
+if(s != NULL)
 {
 printf("%s", s);
 }
