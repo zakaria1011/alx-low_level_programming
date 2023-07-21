@@ -31,12 +31,9 @@ case 's':
 s = va_arg(args, char *);
 if (s == NULL)
 {
-printf("(nil)");
+s = "(nil)"
 }
-if(s != NULL)
-{
 printf("%s", s);
-}
 printed = 1;
 break;
 default:
