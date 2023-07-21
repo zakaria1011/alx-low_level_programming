@@ -2,14 +2,12 @@
 /**
  *  print_all - function that print what ever
  * @format: arg
- * @...: args
  */
 void print_all(const char * const format, ...)
 {
 va_list args;
 int idx = 0, printed = 0;
 char *s;
-
 va_start(args, format);
 while (format[idx] != '\0')
 {
@@ -30,9 +28,7 @@ break;
 case 's':
 s = va_arg(args, char *);
 if (s == NULL)
-{
 s = "(nil)";
-}
 printf("%s", s);
 printed = 1;
 break;
