@@ -17,7 +17,7 @@ printf("[0] (nil)\n");
 }
 else
 {
-printf("%s\n", p->str);
+printf("[%lu] %s\n", strlen(p->str), p->str);
 }
 p = p->next;
 }
