@@ -23,11 +23,11 @@ new_node->n = n;
 current = *head;
 for (i = 0 ; i < idx ; i++)
 {
+if (current == NULL)
+return (NULL);
 step_less = current;
 current = current->next;
 }
-if (current == NULL)
-return (NULL);
 new_node->next = current;
 step_less->next = new_node;
 return (new_node);
