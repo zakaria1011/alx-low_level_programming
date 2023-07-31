@@ -2,6 +2,7 @@
 /**
  * print_listint - print data of nods
  * @h: pointer to list head
+ * Return: num of nodes
 */
 size_t print_listint(const listint_t *h)
 {
