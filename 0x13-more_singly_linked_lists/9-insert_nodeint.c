@@ -25,9 +25,8 @@ if (idx == 0)
 {
 new_node->next = current;
 *head = new_node;
+return (new_node);
 }
-else
-{
 for (i = 0 ; i < idx ; i++)
 {
 if (current == NULL)
@@ -37,6 +36,5 @@ current = current->next;
 }
 new_node->next = current;
 step_less->next = new_node;
-}
 return (new_node);
 }
