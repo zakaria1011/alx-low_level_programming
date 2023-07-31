@@ -27,12 +27,18 @@ new_node->next = current;
 *head = new_node;
 return (new_node);
 }
-for (i = 0 ; i < idx ; i++)
+for (i = 0 ; current != NULL && i < idx ; i++)
 {
-if (current == NULL)
-return (NULL);
 step_less = current;
 current = current->next;
+}
+if (current == NULL && i != idx - 1)
+return (NULL);
+if (i == idx - 1)
+{
+step_less->next = new_node;
+new_node->next = NULL;
+return (new_node);
 }
 new_node->next = current;
 step_less->next = new_node;
