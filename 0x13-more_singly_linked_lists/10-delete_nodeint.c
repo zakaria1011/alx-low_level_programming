@@ -21,7 +21,7 @@ return (1);
 }
 while (i < index)
 {
-if (current == NULL)
+if (current == NULL || current->next == NULL)
 return (-1);
 step_less = current;
 current = current->next;
