@@ -36,12 +36,6 @@ return (NULL);
 step_less = current;
 current = current->next;
 }
-if (i == idx - 1)
-{
-step_less->next = new_node;
-new_node->next = NULL;
-return (new_node);
-}
 new_node->next = current;
 step_less->next = new_node;
 return (new_node);
