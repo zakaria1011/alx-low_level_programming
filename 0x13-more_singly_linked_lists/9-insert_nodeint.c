@@ -29,6 +29,10 @@ return (new_node);
 }
 for (i = 0 ; i < idx ; i++)
 {
+if (current == NULL)
+{
+return (NULL);
+}
 step_less = current;
 current = current->next;
 }
