@@ -29,11 +29,14 @@ return (new_node);
 }
 for (i = 0 ; i < idx ; i++)
 {
-if (current == NULL && i > (idx - 1))
+if (current == NULL && i != (idx - 1))
 {
 return (NULL);
 }
-
+if (current == NULL && i >= idx)
+{
+return (NULL);
+}
 step_less = current;
 current = current->next;
 }
