@@ -30,6 +30,5 @@ i++;
 }
 step_less->next = step_ahead;
 free(current);
-
 return (1);
 }
