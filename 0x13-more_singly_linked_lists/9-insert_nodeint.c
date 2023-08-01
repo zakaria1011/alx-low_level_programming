@@ -32,8 +32,6 @@ for (i = 0 ; current != NULL && i < idx ; i++)
 step_less = current;
 current = current->next;
 }
-if (current == NULL && i != idx - 1)
-return (NULL);
 if (i == idx - 1)
 {
 step_less->next = new_node;
