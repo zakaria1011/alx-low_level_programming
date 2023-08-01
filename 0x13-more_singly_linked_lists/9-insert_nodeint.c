@@ -33,10 +33,6 @@ if (current == NULL && i != (idx - 1))
 {
 return (NULL);
 }
-if (current == NULL && i >= idx)
-{
-return (NULL);
-}
 step_less = current;
 current = current->next;
 }
