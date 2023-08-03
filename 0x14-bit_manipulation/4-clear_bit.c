@@ -1,6 +1,6 @@
 # include "main.h"
 /**
- * set_bit - make bit in index 1 if not
+ * clear_bit - make bit in index 1 if not
  * @n: arg pointer
  * @index: an index
  * Return: 1 or -1
