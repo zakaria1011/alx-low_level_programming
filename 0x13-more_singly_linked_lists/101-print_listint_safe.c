@@ -12,7 +12,6 @@ size_t count = 0;
 if (head == NULL)
 {
 exit(98);
-return (0);
 }
 while (current != NULL)
 {
