@@ -25,6 +25,6 @@ exit(98);
 }
 current = current->next;
 }
-return (count + 1);
+return (count);
 }
 
