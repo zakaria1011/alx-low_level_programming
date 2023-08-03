@@ -12,7 +12,7 @@ if (b ==  NULL)
 return (0);
 while (b[i] != '\0')
 {
-if (b[0] != '1' && b[i] != '0')
+if (b[i] != '1' && b[i] != '0')
 return (0);
 numValue = b[i] - 'O';
 sum += numValue *pow(2, i);
