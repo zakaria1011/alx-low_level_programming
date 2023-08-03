@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * binary_to_unit - convert to binary
+ * binary_to_uint - convert to binary
  * @b: pointer to  binary
  * Return: decimal
 */
