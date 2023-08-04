@@ -8,7 +8,7 @@ void print_binary(unsigned long int n)
 int size, i;
 int l_zeros = 0;
 unsigned long int mask;
-size = sizeof(int) * 8;
+size = 64;
 if (n == 0)
 {
 printf("0");
