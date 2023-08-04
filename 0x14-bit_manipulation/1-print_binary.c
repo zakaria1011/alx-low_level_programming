@@ -26,5 +26,4 @@ else if (l_zeros)
 printf("0");
 }
 }
-printf("\n");
 }
