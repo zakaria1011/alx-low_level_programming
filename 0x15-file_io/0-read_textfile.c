@@ -19,7 +19,7 @@ if (file == NULL)
 {
 return (0);
 }
-buffer = (char *)malloc(letters + 1);
+buffer = (char *)malloc(letters);
 if (buffer == NULL)
 {
 fclose(file);
