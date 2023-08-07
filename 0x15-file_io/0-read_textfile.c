@@ -22,10 +22,10 @@ return (0);
 buffer = (char *)malloc(letters + 1);
 if (buffer == NULL)
 {
-fclose(file);
+close(file);
 return (0);
 }
-bytes_R = fread(buffer, sizeof(char), letters, file);
+bytes_R = read(file, buffer, letters);
 if (bytes_R == -1)
 {
 free(buffer);
@@ -40,6 +40,6 @@ close(file);
 return (0);
 }
 free(buffer);
-fclose(file);
+close(file);
 return (bytes_W);
 }
