@@ -7,8 +7,9 @@
 */
 int append_text_to_file(const char *filename, char *text_content)
 {
-FILE *file;
+int file;
 int test = 1;
+int len = strlen(text_content);
 
 if (filename == NULL)
 {
@@ -18,15 +19,15 @@ if (text_content == NULL)
 {
 return (-1);
 }
-file = fopen(filename, "a");
-if (file == NULL)
+file = open(filename, O_WRONLY | O_APPEND);
+if (file == -1)
 {
 return (-1);
 }
-if (fputs(text_content, file) == EOF)
+if (write(file, text_content, len) == -1)
 {
 test = -1;
 }
-fclose(file);
+close(file);
 return (test);
 }
