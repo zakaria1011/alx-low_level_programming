@@ -19,21 +19,21 @@ if (file == NULL)
 {
 return (0);
 }
-buffer = (char *)malloc(letters);
+buffer = (char *)malloc(letters + 1);
 if (buffer == NULL)
 {
 fclose(file);
 return (0);
 }
 bytes_R = fread(buffer, sizeof(char), letters, file);
-if (bytes_R <= 0)
+if (bytes_R == -1)
 {
 free(buffer);
 fclose(file);
 return (0);
 }
 bytes_W = fwrite(buffer, sizeof(char), bytes_R, stdout);
-if (bytes_R != bytes_W)
+if (bytes_R != bytes_W || bytes_R == -1)
 {
 free(buffer);
 fclose(file);
