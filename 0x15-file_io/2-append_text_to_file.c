@@ -8,8 +8,9 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 int file;
-int test = 1;
+
 int len = strlen(text_content);
+ssize_t bytes_W;
 
 if (filename == NULL)
 {
@@ -24,10 +25,11 @@ if (file == -1)
 {
 return (-1);
 }
-if (write(file, text_content, len) == -1)
+bytes_W = write(file, text_content, len) == -1);
+if (bytes_W == -1)
 {
-test = -1;
+return (-1);
 }
 close(file);
-return (test);
+return (1);
 }
