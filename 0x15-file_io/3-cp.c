@@ -25,7 +25,7 @@ ssize_t bytes_R;
 char buffer[1024];
 if (argc != 3)
 {
-print_error_and_exit(97, "Usage: cp file_from file_to");
+print_error_and_exit(97, "Usage: cp file_from file_to\n");
 }
 fd_from = open(file_from, O_RDONLY);
 if (fd_from == -1)
