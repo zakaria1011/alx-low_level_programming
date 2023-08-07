@@ -7,7 +7,7 @@
 */
 int create_file(const char *filename, char *text_content)
 {
-FILE *file;
+int file;
 size_t bytes_W;
 size_t len;
 
@@ -15,21 +15,21 @@ if (filename == NULL)
 {
 return (-1);
 }
-file = fopen(filename, "w");
-if (file == NULL)
+file = open(filename, O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR);
+if (file == -1)
 {
 return (-1);
 }
 if (text_content != NULL)
 {
 len = strlen(text_content);
-bytes_W = fwrite(text_content, sizeof(char), len, file);
+bytes_W = write(file, text_content, len);
 if (bytes_W < len)
 {
-fclose(file);
+close(file);
 return (-1);
 }
 }
-fclose(file);
+close(file);
 return (1);
 }
