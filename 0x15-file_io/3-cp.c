@@ -1,13 +1,12 @@
 #include "main.h"
 /**
- * print_error_and_exit - printf error
+ * error_exit - help message error
  * @code: code to exit
- * @message: error message
+ * @message: message to show
 */
-
-void print_error_and_exit(int code, const char *message)
+void error_exit(int code, const char *message)
 {
-dprintf(STDERR_FILENO, "Error: %s\n", message);
+dprintf(STDERR_FILENO, "%s\n", message);
 exit(code);
 }
 /**
@@ -21,40 +20,50 @@ int main(int argc, char *argv[])
 const char *file_from = argv[1];
 const char *file_to = argv[2];
 int fd_from, fd_to;
-ssize_t bytes_R;
-char buffer[1024];
+char buffer[BUFFER_SIZE];
+ssize_t bytes_read;
+
 if (argc != 3)
 {
-print_error_and_exit(97, "Usage: cp file_from file_to\n");
+error_exit(97, "Usage: cp file_from file_to");
 }
 fd_from = open(file_from, O_RDONLY);
 if (fd_from == -1)
 {
-print_error_and_exit(98, strerror(errno));
+error_exit(98, "Can't read from file %s", file_from);
 }
 fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0644);
 if (fd_to == -1)
 {
-print_error_and_exit(99, strerror(errno));
+close(fd_from);
+error_exit(99, "Can't write to %s", file_to);
 }
-while ((bytes_R = read(fd_from, buffer, sizeof(buffer))) > 0)
+while ((bytes_read = read(fd_from, buffer, sizeof(buffer))) > 0)
 {
-if (write(fd_to, buffer, bytes_R) == -1)
-{
-print_error_and_exit(99, strerror(errno));
+if (write(fd_to, buffer, bytes_read) != bytes_read){
+dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+close(fd_from);
+close(fd_to);
+exit(99);
 }
 }
-if (bytes_R == -1)
+if (bytes_read == -1)
 {
-print_error_and_exit(98, strerror(errno));
+dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+close(fd_from);
+close(fd_to);
+exit(98);
 }
 if (close(fd_from) == -1)
 {
-print_error_and_exit(100, strerror(errno));
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
+close(fd_to);
+exit(100);
 }
 if (close(fd_to) == -1)
 {
-print_error_and_exit(100, strerror(errno));
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
+exit(100);
 }
-return (0);
+return 0;
 }
