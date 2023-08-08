@@ -15,11 +15,7 @@ if (filename == NULL)
 {
 return (-1);
 }
-if (text_content == NULL)
-{
-return (-1);
-}
-else
+if (text_content != NULL)
 {
 len = strlen(text_content);
 }
