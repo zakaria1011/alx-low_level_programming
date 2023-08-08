@@ -9,15 +9,6 @@ dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file);
 exit(98);
 }
 /**
- * no_close - error close
- * @fd: file
-*/
-void no_close(int fd)
-{
-dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-exit(100);
-}
-/**
  * main -  main fonction
  * @argc: number of arg
  * @argv: args
@@ -55,11 +46,13 @@ close_source = close(source_fd);
 close_destination = close(destination_fd);
 if (close_source < 0)
 {
-no_close(source_fd);
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", source_fd);
+exit(100);
 }
 if (close_destination < 0)
 {
-no_close(destination_fd);
+dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", destination_fd);
+exit(100);
 }
 return (0);
 }
