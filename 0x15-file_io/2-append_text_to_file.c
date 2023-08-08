@@ -24,7 +24,7 @@ if (file == -1)
 {
 return (-1);
 }
-bytes_W = write(file, text_content, len);
+bytes_W = write(file, text_content, len - 1);
 if (bytes_W == -1)
 {
 return (-1);
