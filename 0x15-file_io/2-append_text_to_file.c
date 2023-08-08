@@ -8,7 +8,7 @@
 int append_text_to_file(const char *filename, char *text_content)
 {
 int file;
-int len;
+int len = 0;
 int bytes_W;
 
 if (filename == NULL)
@@ -17,7 +17,10 @@ return (-1);
 }
 if (text_content != NULL)
 {
-len = strlen(text_content);
+while (text_content[len] != '\0')
+{
+len++;
+}
 }
 file = open(filename, O_WRONLY | O_APPEND);
 if (file == -1)
