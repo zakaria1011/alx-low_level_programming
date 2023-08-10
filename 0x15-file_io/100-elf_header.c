@@ -4,7 +4,7 @@
 #include <fcntl.h>
 #include <string.h>
 #include <stdint.h>
-#include <elf.h>
+#include "elf.h"
 
 void print_elf_header_info(Elf64_Ehdr *elf_header);
 int main(int argc, char *argv[]);
