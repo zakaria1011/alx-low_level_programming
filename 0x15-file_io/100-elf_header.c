@@ -6,6 +6,11 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+void print_error(const char *message);
+void print_magic(unsigned char *e_ident);
+void print_class(unsigned char e_ident);
+
+
 /**
  * print_error - Print an error message and exit with status 98.
  * @message: The error message to display.
