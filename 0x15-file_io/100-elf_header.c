@@ -1,163 +1,88 @@
-#include <elf.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <sys/mman.h>
+#include <elf.h>
 
-void display_error(const char *message)
-{
-fprintf(stderr, "Error : %s\n", message);
-exit(98);
-}
+#define ELF_HEADER_SIZE sizeof(Elf64_Ehdr)
 
-int open_file(const char *filename)
-{
-int fd = open(filename, O_RDONLY);
-if (fd == -1)
-{
-display_error("Failed  to open the file");
-}
-return (fd);
-}
-
-void read_elf_header(int fd, Elf64_Ehdr *header)
-{
-if (read(fd, header, sizeof(*header)) != sizeof(*header))
-{
-close(fd);
-display_error("Failed to read ELF header"); 
-}
+void print_elf_magic(const unsigned char *magic) {
+    printf("Magic: ");
+    for (int i = 0; i < EI_NIDENT; i++) {
+        printf("%02x ", magic[i]);
+    }
+    printf("\n");
 }
 
-void validate_elf_file(Elf64_Ehdr *header)
-{
-if (memcmp(header->e_ident, ELFMAG, SELFMAG) != 0)
-{
-display_error("not an ELF file");
-}
+void print_elf_class(unsigned char elf_class) {
+    printf("Class: %s\n", (elf_class == ELFCLASS32) ? "ELF32" : "ELF64");
 }
 
-void display_elf_magic(Elf64_Ehdr *header)
-{
-int i;
-printf("magic");
-for(i = 0 ; i < EI_NIDENT ; i++)
-{
-printf("%02x ",header->e_ident[i]);
-}
-printf("\n");
+void print_elf_data(unsigned char elf_data) {
+    printf("Data: %s\n", (elf_data == ELFDATA2LSB) ? "Little Endian" : "Big Endian");
 }
 
-void display_elf_class(Elf64_Ehdr *header)
-{
-printf("classe: ");
-switch (header->e_ident[EI_CLASS])
-{
-case ELFCLASS32:
-printf("ELF32\n");
-break;
-case ELFCLASS64:
-printf("ELF64\n");
-break;
-default:
-printf("invalid\n"); 
-}
+void print_elf_header_info(const Elf64_Ehdr *header) {
+    print_elf_magic(header->e_ident);
+    print_elf_class(header->e_ident[EI_CLASS]);
+    print_elf_data(header->e_ident[EI_DATA]);
+
+    printf("Version: %u\n", header->e_version);
+    printf("OS/ABI: %u\n", header->e_ident[EI_OSABI]);
+    printf("ABI Version: %u\n", header->e_ident[EI_ABIVERSION]);
+    printf("Type: %u\n", header->e_type);
+    printf("Entry point address: 0x%lx\n", (unsigned long)header->e_entry);
 }
 
-void display_elf_data(Elf64_Ehdr *header)
-{
-printf("Data: ");
-switch (header->e_ident[EI_DATA])
-{
-case ELFDATA2LSB:
-printf("2's complement, littlre-endian\n");
-break;
-case ELFDATA2MSB:
-printf("2's complement, big-endian\n");
-break;
-default:
-printf("invalid\n");
-break; 
-}
-}
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s elf_filename\n", argv[0]);
+        return 98;
+    }
 
-void display_elf_version(Elf64_Ehdr *header)
-{
-printf("Version: %d\n", header->e_ident[EI_VERSION]);
-}
+    int fd = open(argv[1], O_RDONLY);
+    if (fd == -1) {
+        perror("Error opening file");
+        return 98;
+    }
 
-void display_elf_osabi(Elf64_Ehdr *header)
-{
-printf("OS/ABI: ");
-switch (header->e_ident[EI_OSABI])
-{
-case ELFOSABI_SYSV:
-printf("UNIX System V\n");
-break;
-case ELFOSABI_LINUX:
-printf("Linux\n");
-break;
-default:
-printf("Other\n");
-break;
-}
-}
+    struct stat file_stat;
+    if (fstat(fd, &file_stat) == -1) {
+        perror("Error getting file size");
+        close(fd);
+        return 98;
+    }
 
-void display_elf_abi_version(Elf64_Ehdr *header)
-{
-printf("ABI Version: %d\n", header->e_ident[EI_ABIVERSION]);
-}
+    if (file_stat.st_size < ELF_HEADER_SIZE) {
+        fprintf(stderr, "Error: File size too small to contain ELF header\n");
+        close(fd);
+        return 98;
+    }
 
-void display_elf_type(Elf64_Ehdr *header)
-{
-printf("Type: ");
-switch (header->e_type)
-{
-case ET_NONE:
-printf("None\n");
-break;
-case ET_EXEC:
-printf("Executable\n");
-break;
-case ET_DYN:
-printf("Shared object\n");
-break;
-case ET_REL:
-printf("Relocatable\n");
-break;
-default:
-printf("Unknown\n");
-break;
-}
-}
+    void *mapped_file = mmap(NULL, file_stat.st_size, PROT_READ, MAP_PRIVATE, fd, 0);
+    if (mapped_file == MAP_FAILED) {
+        perror("Error mapping file");
+        close(fd);
+        return 98;
+    }
 
-void display_entry_point(Elf64_Ehdr *header)
-{
-printf("Entry point address: %#lx\n", (unsigned long)header->e_entry);
-}
+    const Elf64_Ehdr *header = (const Elf64_Ehdr *)mapped_file;
 
-int main(int argc, char *argv[])
-{
-if (argc != 2) {
-display_error("Usage: elf_header elf_filename");
-}
-    
-const char *filename = argv[1];
-int fd = open_file(filename);
-Elf64_Ehdr header;
+    if (memcmp(header->e_ident, ELFMAG, SELFMAG) != 0) {
+        fprintf(stderr, "Error: Not an ELF file\n");
+        munmap(mapped_file, file_stat.st_size);
+        close(fd);
+        return 98;
+    }
 
-read_elf_header(fd, &header);
-validate_elf_file(&header);
-display_elf_magic(&header);
-display_elf_class(&header);
-display_elf_data(&header);
-display_elf_version(&header);
-display_elf_osabi(&header);
-display_elf_abi_version(&header);
-display_elf_type(&header);
-display_entry_point(&header);
-close(fd);
-return 0;
+    print_elf_header_info(header);
+
+    munmap(mapped_file, file_stat.st_size);
+    close(fd);
+
+    return 0;
 }
