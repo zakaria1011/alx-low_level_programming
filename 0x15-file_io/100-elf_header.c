@@ -1,11 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <fcntl.h>
-#include <unistd.h>
+#include <elf.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-#include <elf.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 void display_error(const char *message)
 {
