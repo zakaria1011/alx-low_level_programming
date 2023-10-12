@@ -19,6 +19,12 @@ return (NULL);
 new_node->n = n;
 new_node->prev = NULL;
 new_node->next = NULL;
+if (idx == 0)
+{
+new_node->prev = NULL;
+new_node->next = current;
+*h = new_node;
+}
 while (current != NULL && idx > 0)
 {
 prev = current;
