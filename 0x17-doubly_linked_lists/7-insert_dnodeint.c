@@ -24,6 +24,7 @@ if (idx == 0 && current != NULL)
 new_node->prev = NULL;
 new_node->next = current;
 *h = new_node;
+return (new_node);
 }
 while (current != NULL && idx > 0)
 {
