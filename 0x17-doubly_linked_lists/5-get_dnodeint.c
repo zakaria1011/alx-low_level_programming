@@ -13,7 +13,7 @@ if (head == NULL)
 {
 return (NULL);
 }
-while (idx < index || current == NULL)
+while (idx < index || current->next == NULL)
 {
 current = current->next;
 idx++;
