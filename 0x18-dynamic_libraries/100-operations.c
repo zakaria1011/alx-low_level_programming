@@ -1,65 +1,71 @@
-int add(int i, int k);
-int sub(int i, int k);
-int mul(int i, int k);
-int div(int i, int k);
-int mod(int i, int k);
+#include <stdio.h>
 
 /**
-* add - adds two integers
-* @i: first integer to add
-* @k: second integer to add
-* Return: the sum
-*/
-
-int add(int i, int k)
+ * add - Adds two integers.
+ * @a: The first integer.
+ * @b: The second integer.
+ *
+ * Return: The result of the addition.
+ */
+int add(int a, int b)
 {
-	return (i + k);
+    return (a + b);
 }
 
 /**
-* sub - subtracts two integers
-* @i: first integer to add
-* @k: second integer to add
-* Return: the subtract
-*/
-
-int sub(int i, int k)
+ * sub - Subtracts two integers.
+ * @a: The first integer.
+ * @b: The second integer.
+ *
+ * Return: The result of the subtraction.
+ */
+int sub(int a, int b)
 {
-	return (i - k);
+    return (a - b);
 }
 
 /**
-* mul - multiplies two integers
-* @i: first integer to add
-* @k: second integer to add
-* Return: the multiple
-*/
-
-int mul(int i, int k)
+ * mul - Multiplies two integers.
+ * @a: The first integer.
+ * @b: The second integer.
+ *
+ * Return: The result of the multiplication.
+ */
+int mul(int a, int b)
 {
-	return (i * k);
+    return (a * b);
 }
 
 /**
-* div - divideds two integers
-* @i: first integer to add
-* @k: second integer to add
-* Return: the dividend integer
-*/
-
-int div(int i, int k)
+ * div - Divides two integers.
+ * @a: The numerator.
+ * @b: The denominator.
+ *
+ * Return: The result of the division.
+ */
+int div(int a, int b)
 {
-	return (i / k);
+    if (b == 0)
+    {
+        printf("Error: Division by zero\n");
+        return (0);
+    }
+    return (a / b);
 }
 
 /**
-  mod - finds the modulus of two integers
-  @i: first integer to add
-  @k: second integer to add
-  Return: the modulus
-*/
-
-int mod(int i, int k)
+ * mod - Computes the modulo of two integers.
+ * @a: The dividend.
+ * @b: The divisor.
+ *
+ * Return: The result of the modulo operation.
+ */
+int mod(int a, int b)
 {
-	return (i % k);
+    if (b == 0)
+    {
+        printf("Error: Modulo by zero\n");
+        return (0);
+    }
+    return (a % b);
 }
