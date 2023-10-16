@@ -1,1 +1,1 @@
-dynamic librery
+dynamic lib
