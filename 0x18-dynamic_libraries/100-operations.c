@@ -1,4 +1,3 @@
-#include <stdio.h>
 int add(int i, int k);
 int sub(int i, int k);
 int mul(int i, int k);
@@ -6,60 +5,61 @@ int div(int i, int k);
 int mod(int i, int k);
 
 /**
- * add - adding
- * @a: first num
- * @b: second num
- * Return: sum
+* add - adds two integers
+* @i: first integer to add
+* @k: second integer to add
+* Return: the sum
 */
-int add(int a, int b)
+
+int add(int i, int k)
 {
-return (a + b);
+	return (i + k);
 }
+
 /**
- * sub - subtracting
- * @a: first num
- * @b: second num
- * Return: diff
+* sub - subtracts two integers
+* @i: first integer to add
+* @k: second integer to add
+* Return: the subtract
 */
-int sub(int a, int b)
+
+int sub(int i, int k)
 {
-return (a - b);
+	return (i - k);
 }
+
 /**
- * mul - multiplication
- * @a: first num
- * @b: second num
- * Return: product
+* mul - multiplies two integers
+* @i: first integer to add
+* @k: second integer to add
+* Return: the multiple
 */
-int mul(int a, int b)
+
+int mul(int i, int k)
 {
-return (a * b);
+	return (i * k);
 }
+
 /**
- * div - division
- * @a: first num
- * @b: second num
- * Return: quotient
+* div - divideds two integers
+* @i: first integer to add
+* @k: second integer to add
+* Return: the dividend integer
 */
-int div(int a, int b)
+
+int div(int i, int k)
 {
-if (b == 0)
-{
-return (0);
+	return (i / k);
 }
-return (a / b);
-}
+
 /**
- * mod - modul
- * @a: first num
- * @b: second num
- * Return: rest
+  mod - finds the modulus of two integers
+  @i: first integer to add
+  @k: second integer to add
+  Return: the modulus
 */
-int mod(int a, int b)
+
+int mod(int i, int k)
 {
-if (b == 0)
-{
-return (0);
-}
-return (a % b);
+	return (i % k);
 }
