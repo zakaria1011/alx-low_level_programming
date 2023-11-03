@@ -6,14 +6,21 @@
 */
 hash_table_t *hash_table_create(unsigned long int size)
 {
-int i;
-hash_table_t *temp;
-temp = malloc(sizeof(hash_table_t));
-if (temp == NULL)
+hash_table_t *new_tab;
+if (size == 0)
 {
 return (NULL);
-free(NULL);
 }
-temp->size = size;
-return (temp);
+new_tab = malloc(sizeof(hash_table_t));
+if (new_tab == NULL)
+{
+return (NULL);
+}
+new_tab->array = malloc(sizeof(hash_node_t) * size);
+if (new_tab->array == NULL)
+{
+return (NULL);
+}
+new_tab->size = size;
+return (new_tab);
 }
