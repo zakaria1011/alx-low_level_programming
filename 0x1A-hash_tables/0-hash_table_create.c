@@ -23,9 +23,5 @@ if (new_tab->array == NULL)
 return (NULL);
 }
 new_tab->size = size;
-for (i = 0; i < size; i++)
-{
-new_tab->array[i] = NULL;
-}
 return (new_tab);
 }
