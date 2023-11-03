@@ -18,7 +18,7 @@ if (new_tab == NULL)
 return (NULL);
 }
 new_tab->size = size;
-new_tab->array = malloc(sizeof(hash_node_t) * size);
+new_tab->array = malloc(sizeof(hash_node_t *) * size);
 if (new_tab->array == NULL)
 {
 return (NULL);
