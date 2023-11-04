@@ -18,7 +18,7 @@ index = key_index(key, ht -> size);
 new_node = malloc(sizeof(hash_node_t));
 if (new_node == NULL)
 return (0);
-new_node -> value = value;
+new_node -> value = strdup(value);
 new_node -> next = ht -> array[index];
 ht -> array[index] = new_node;
 return (1);
