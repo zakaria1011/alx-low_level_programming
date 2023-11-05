@@ -7,6 +7,8 @@ void hash_table_delete(hash_table_t *ht)
 {
 unsigned long int index;
 hash_node_t *current, *next;
+if (ht == NULL)
+return;
 for (index = 0 ; index < ht->size ; index++)
 {
 current = ht->array[index];
