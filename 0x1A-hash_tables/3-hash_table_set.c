@@ -22,7 +22,7 @@ if (current != NULL)
     {
         new_value = strdup(value);
         free(current -> value);
-        current -> value == new_value;
+        current -> value = new_value;
         return (1);
     }
 }
