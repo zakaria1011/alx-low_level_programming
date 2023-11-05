@@ -6,14 +6,15 @@
 void hash_table_delete(hash_table_t *ht)
 {
 unsigned long int index;
-hash_node_t *current;
+hash_node_t *current, *next;
 for (index = 0 ; index < ht->size ; index++)
 {
 current = ht->array[index];
 while (current != NULL)
 {
+next = current->next;
 free(current);
-current = current->next;
+current = next;
 }
 }
 }
