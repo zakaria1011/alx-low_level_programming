@@ -15,8 +15,10 @@ while (current != NULL)
 next = current->next;
 free(current->key);
 free(current->value);
+free(current);
 current = next;
 }
+free(ht->array);
 free(ht);
 }
 }
