@@ -16,22 +16,14 @@ if (!ht || !key || *key == '\0')
 return (0);
 index = key_index((const unsigned char *)key, ht -> size);
 current = ht -> array[index];
-if (current != NULL)
+if (strcmp(current -> key, key) == 0)
 {
-    if (strcmp(current -> key , key) == 0)
-    {
-        new_value = strdup(value);
-        free(current -> value);
-        current -> value = new_value;
-        return (1);
-    }
+    new_value = strdup(value);
+    current -> value = new_value;
+    return (1);
 }
-
 new_node = malloc(sizeof(hash_node_t));
-if (new_node == NULL)
-return (0);
 new_node -> value = strdup(value);
-new_node -> next = ht -> array[index];
-ht -> array[index] = new_node;
+new_node -> key = strdup(key);
 return (1);
 }
