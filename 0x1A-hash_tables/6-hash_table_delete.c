@@ -17,5 +17,6 @@ free(current->key);
 free(current->value);
 current = next;
 }
+free(ht);
 }
 }
