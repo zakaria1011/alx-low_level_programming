@@ -13,7 +13,8 @@ current = ht->array[index];
 while (current != NULL)
 {
 next = current->next;
-free(current);
+free(current->key);
+free(current->value);
 current = next;
 }
 }
