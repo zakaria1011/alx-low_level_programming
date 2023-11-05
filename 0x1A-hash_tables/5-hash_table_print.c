@@ -18,7 +18,7 @@ while (current != NULL)
 {
 if (more_nodes == 0)
 printf(", ");
-printf("'%s':'%s'", current->key, current->value);
+printf("'%s': '%s'", current->key, current->value);
 more_nodes = 0;
 current = current->next;
 }
