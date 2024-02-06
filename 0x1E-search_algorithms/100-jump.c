@@ -13,7 +13,7 @@ int i;
 int prev = 0;
 int curr = step;
 if (array == NULL)
-return -1;
+return (-1);
 printf("Value checked array[%d] = [%d]\n", prev, array[prev]);
 while (array[curr] < value && curr < (int)size)
 {
