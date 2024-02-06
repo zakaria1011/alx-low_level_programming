@@ -17,13 +17,13 @@ if (array == NULL)
 return (-1);
 if (size == 1)
 {
-    if (array[0] == value)
-    {
-        printf("Value checked array[0] = %d\n", value);
-        return (0);
-    }
-    else
-    return (-1);
+if (array[0] == value)
+{
+printf("Value checked array[0] = %d\n", value);
+return (0);
+}
+else
+return (-1);
 }
 while (array[step] < value && step < (int)size)
 {
