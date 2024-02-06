@@ -12,7 +12,7 @@ int m;
 int step = 0;
 int i;
 m = sqrt(size);
-if (array == NULL)
+if (array == NULL || value == '\0')
 return (-1);
 while (array[step] < value && step < (int)size)
 {
